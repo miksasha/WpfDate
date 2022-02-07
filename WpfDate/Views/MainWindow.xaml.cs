@@ -23,6 +23,7 @@ namespace WpfDate
         public MainWindow()
         {
             InitializeComponent();
+
         }
     }
 }
