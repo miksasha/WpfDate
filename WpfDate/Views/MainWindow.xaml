@@ -19,11 +19,12 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
+
         <DatePicker Name="datePicker" IsDropDownOpen="True" SelectedDateFormat="Short"  Grid.Row="0" />
         <TextBlock
          FontSize="20"
             Grid.Row="1" Margin="5"
-         Text="Ваш вік: "/>
+         Text="{Binding Age, Mode = OneWay}"/>
         <TextBlock
          FontSize="20"
             Grid.Row="2" Margin="5"

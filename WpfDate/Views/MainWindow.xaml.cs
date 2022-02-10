@@ -23,7 +23,31 @@ namespace WpfDate
         public MainWindow()
         {
             InitializeComponent();
-
         }
+
+        private void StudentViewControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            //звязування з ViewModels
+            WpfDate.ViewModels.MainViewModels studentViewModelObject =
+               new WpfDate.ViewModels.MainViewModels();
+            studentViewModelObject.LoadInformation();
+
+            //можливе отримення значенння дати з DatePicker
+            DateTime? selectedDate = datePicker.SelectedDate;
+            if (selectedDate.HasValue)
+            {
+                string formatted = selectedDate.Value.ToString("dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            }
+            // StudentViewControl.DataContext = studentViewModelObject;
+        }
+
+        //метод отримання повідомлення, вітання з дн
+        private void btnSimpleMessageBox_Click(object sender, RoutedEventArgs e)
+        {
+            //<Button Name="btnSimpleMessageBox" Click="btnSimpleMessageBox_Click">Simple MessageBox</Button>
+            MessageBox.Show("З днем народження, любий друже!");
+        }
+
+ 
     }
 }
