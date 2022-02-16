@@ -7,17 +7,25 @@ namespace WpfDate.ViewModels
 {
     public class MainViewModels
     {
-      
-        private double age;
-        public void LoadInformation()
-        {
-            // Date date=new Date();
-        }
-        public double Age
-        {
-            get { return 22; }
+        #region Fields
+        private DateModel _date = new DateModel();
+        #endregion
 
+        #region Properties
+        public DateTime Birthday
+        {
+            get
+            { return _date.Birthday; }
 
+            set
+            {
+                if (_date.Birthday != value)
+                {
+                    _date.Birthday = value;
+                }
+            }
         }
+        #endregion
+
     }
 }

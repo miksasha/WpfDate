@@ -7,39 +7,23 @@ namespace WpfDate.Models
 {
     public class DateModel
     {
+        private DateTime _birthday;
+        //DateModel(DateTime birthday)
+        //{
+        //    this._birthday = birthday;
+        //}
 
-    }
-    public class Date : INotifyPropertyChanged
-    {
-        private DateTime birthday;
-        Date(DateTime birthday)
-        {
-            this.birthday = birthday;
-        }
-
-        public DateTime FirstName
+        public DateTime Birthday
         {
             get
-            {
-                return birthday;
-            }
+            { return _birthday; }
 
             set
             {
-                if (birthday != value)
+                if (_birthday != value)
                 {
-                    birthday = value;
+                    _birthday = value;
                 }
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void RaisePropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
             }
         }
     }
