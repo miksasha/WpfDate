@@ -25,6 +25,15 @@ namespace WpfDate.ViewModels
                 }
             }
         }
+        public bool CorrectDate()
+        {
+            return _date.CorrectDate();
+        }
+
+        public bool BirthdayIsToday()
+        {
+            return _date.BirthdayIsToday();
+        }
 
         public int Age
         {

@@ -41,13 +41,13 @@ namespace WpfDate.Models
         public bool CorrectDate()
         {
             if (_birthday > DateTime.Today) return false;
-            if(_age > 135) return false;
+            if(Age > 135) return false;
             return true;
         }
 
         public bool BirthdayIsToday()
         {
-            if (_birthday == DateTime.Today) return true;
+            if (_birthday.Day==DateTime.Today.Day && _birthday.Month == DateTime.Today.Month) return true;
             return false;
         }
 

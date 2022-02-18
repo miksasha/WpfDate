@@ -28,9 +28,24 @@ namespace WpfDate.Views
 
         }
 
-        private void OnMouseEnter(MouseEventArgs e)
+        private void Start_OnClick(object sender, RoutedEventArgs e)
         {
+            _viewModel.Birthday = (DateTime)DatePicker.SelectedDate;
 
+            if (!_viewModel.CorrectDate())
+            {
+                MessageBox.Show("Ви ввели не правильну дату дня народження!");
+            }
+            else
+            {
+                Age.Text = "Вік: " + _viewModel.Age;
+                if(_viewModel.BirthdayIsToday())
+                {
+                    MessageBox.Show("Вітаємо з Днем народження!\nБудьте щасливі!");
+                }
+                WesternAstrologicalSystem.Text = "Західна астрологічна системи: " + _viewModel.WSign;
+                ChinaAstrologicalSystem.Text = "Китайська астрологічна системи: " + _viewModel.CSign;
+            }
         }
     }
 }
