@@ -25,7 +25,27 @@ namespace WpfDate.ViewModels
                 }
             }
         }
+
+        public TimeSpan Age
+        {
+            get
+            {
+                return _date.Age;
+            }
+        }
+        public string WSign
+        {
+            get
+            { return _date.WSign(); }
+        }
+        public string CSign
+        {
+            get
+            { return _date.CSign(); }
+        }
         #endregion
+
+
 
     }
 }

@@ -25,7 +25,9 @@ namespace WpfDate.Views
         {
             InitializeComponent();
             DataContext = _viewModel = new MainViewModels();
+
         }
+
 
     }
 }
