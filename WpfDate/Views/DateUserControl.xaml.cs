@@ -35,6 +35,16 @@ namespace WpfDate.Views
             if (!_viewModel.CorrectDate())
             {
                 MessageBox.Show("Ви ввели не правильну дату дня народження!");
+                if(_viewModel.Age > 135)
+                {
+                    Age.Text = "Вік: " + _viewModel.Age + ". Перевірте введений рік.";
+                }
+                else
+                {
+                    Age.Text = "Людина ще не народилась";
+                }
+                WesternAstrologicalSystem.Text = "Західна астрологічна системи: " + _viewModel.WSign;
+                ChinaAstrologicalSystem.Text = "Китайська астрологічна системи: " + _viewModel.CSign;
             }
             else
             {
