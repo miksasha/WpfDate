@@ -32,6 +32,7 @@ namespace WpfDate.ViewModels
             {
                 return _date.Age;
             }
+            set {  _date.Age = value; }
         }
         public string WSign
         {

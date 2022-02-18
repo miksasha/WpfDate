@@ -7,7 +7,7 @@ namespace WpfDate.Models
 {
     public class DateModel
     {
-        private DateTime _birthday = new DateTime(2022, 2, 22);
+        private DateTime _birthday = DateTime.Today;
         private int _age = 0;
        
         public DateTime Birthday
@@ -35,6 +35,7 @@ namespace WpfDate.Models
                     if(today.Day - _birthday.Day < 0) return --_age;
                 return _age;
             }
+            set {  _age = value; }
         }
 
         public bool CorrectDate()

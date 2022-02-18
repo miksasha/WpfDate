@@ -14,13 +14,17 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
         <DatePicker Name="datePicker" IsDropDownOpen="True" SelectedDateFormat="Short"  Grid.Row="0" SelectedDate="{Binding Birthday, Mode=TwoWay}" />
-        <TextBlock FontSize="20" Grid.Row="1" Margin="5" Name="age"
-         Text="{Binding Birthday, Mode=TwoWay}"/>
-        <TextBlock FontSize="20" Grid.Row="2" Margin="5" Name="westernAstrologicalSystem"
+        <Button Name="Start" Grid.Row="0" Grid.Column="1" Content="Обрахувати" HorizontalAlignment="Center" VerticalAlignment="Center" ></Button>
+        <TextBlock FontSize="20" Grid.Row="1" Margin="5" Name="age" Grid.ColumnSpan="2"
+         Text="Вік: "/>
+        <TextBlock FontSize="20" Grid.Row="2" Margin="5" Name="westernAstrologicalSystem"  Grid.ColumnSpan="2"
          Text="Західна астрологічна системи: "/>
-        <TextBlock  FontSize="20" Grid.Row="3" Margin="5" Name="chinaAstrologicalSystem"
+        <TextBlock  FontSize="20" Grid.Row="3" Margin="5" Name="chinaAstrologicalSystem"  Grid.ColumnSpan="2"
          Text="Китайська астрологічна системи: "/>
     </Grid>
 </UserControl>
