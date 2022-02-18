@@ -18,7 +18,7 @@ namespace WpfDate.Views
 
         private void Start_OnClick(object sender, RoutedEventArgs e)
         {
-            _viewModel.Birthday = (DateTime)TbDatePicker.SelectedDate;
+            _viewModel.Birthday = (DateTime)BirthdayPicker.SelectedDate;
 
             if (!_viewModel.CorrectDate())
             {
