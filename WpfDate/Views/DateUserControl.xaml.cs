@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WpfDate.ViewModels;
 
 namespace WpfDate.Views
@@ -30,7 +21,7 @@ namespace WpfDate.Views
 
         private void Start_OnClick(object sender, RoutedEventArgs e)
         {
-            _viewModel.Birthday = (DateTime)DatePicker.SelectedDate;
+            _viewModel.Birthday = (DateTime)MyDatePicker.SelectedDate;
 
             if (!_viewModel.CorrectDate())
             {

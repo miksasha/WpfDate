@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock FontSize="20" Grid.Row="0" Margin="5" Name="Label" Grid.ColumnSpan="2" Foreground="Teal"
          Text="Введіть дату свого народження: "/>
-        <DatePicker Name="DatePicker" IsDropDownOpen="True" SelectedDateFormat="Short"  Grid.Row="1" SelectedDate="{Binding Birthday, Mode=TwoWay}" />
+        <DatePicker Name="MyDatePicker" IsDropDownOpen="True" SelectedDateFormat="Short"  Grid.Row="1" SelectedDate="{Binding Birthday, Mode=TwoWay}" />
         <Button Name="Start" Grid.Row="1" Grid.Column="1" Content="Обрахувати" Padding="8,4,8,4" Background="Teal" FontWeight="DemiBold" Foreground="Cornsilk"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="Start_OnClick"></Button>
         <TextBlock FontSize="20" Grid.Row="2" Margin="5" Name="Age" Grid.ColumnSpan="2" Foreground="Teal"
          Text="Вік: "/>
