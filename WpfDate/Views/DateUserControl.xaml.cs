@@ -5,9 +5,6 @@ using WpfDate.ViewModels;
 
 namespace WpfDate.Views
 {
-    /// <summary>
-    /// Логика взаимодействия для DateUserControl.xaml
-    /// </summary>
     public partial class DateUserControl : UserControl
     {
         private MainViewModels _viewModel;
@@ -21,31 +18,31 @@ namespace WpfDate.Views
 
         private void Start_OnClick(object sender, RoutedEventArgs e)
         {
-            _viewModel.Birthday = (DateTime)MyDatePicker.SelectedDate;
+            _viewModel.Birthday = (DateTime)TbDatePicker.SelectedDate;
 
             if (!_viewModel.CorrectDate())
             {
                 MessageBox.Show("Ви ввели не правильну дату дня народження!");
                 if(_viewModel.Age > 135)
                 {
-                    Age.Text = "Вік: " + _viewModel.Age + ". Перевірте введений рік.";
+                    TbAge.Text = "Вік: " + _viewModel.Age + ". Перевірте введений рік.";
                 }
                 else
                 {
-                    Age.Text = "Людина ще не народилась";
+                    TbAge.Text = "Людина ще не народилась";
                 }
-                WesternAstrologicalSystem.Text = "Західна астрологічна системи: " + _viewModel.WSign;
-                ChinaAstrologicalSystem.Text = "Китайська астрологічна системи: " + _viewModel.CSign;
+                TbWesternAstrologicalSystem.Text = "Західна астрологічна системи: " + _viewModel.WSign;
+                TbChinaAstrologicalSystem.Text = "Китайська астрологічна системи: " + _viewModel.CSign;
             }
             else
             {
-                Age.Text = "Вік: " + _viewModel.Age;
+                TbAge.Text = "Вік: " + _viewModel.Age;
                 if(_viewModel.BirthdayIsToday())
                 {
                     MessageBox.Show("Вітаємо з Днем народження!\nБудьте щасливі!");
                 }
-                WesternAstrologicalSystem.Text = "Західна астрологічна системи: " + _viewModel.WSign;
-                ChinaAstrologicalSystem.Text = "Китайська астрологічна системи: " + _viewModel.CSign;
+                TbWesternAstrologicalSystem.Text = "Західна астрологічна системи: " + _viewModel.WSign;
+                TbChinaAstrologicalSystem.Text = "Китайська астрологічна системи: " + _viewModel.CSign;
             }
         }
     }
