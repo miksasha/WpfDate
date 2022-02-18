@@ -26,7 +26,7 @@ namespace WpfDate.ViewModels
             }
         }
 
-        public TimeSpan Age
+        public int Age
         {
             get
             {

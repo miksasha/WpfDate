@@ -28,6 +28,9 @@ namespace WpfDate.Views
 
         }
 
+        private void OnMouseEnter(MouseEventArgs e)
+        {
 
+        }
     }
 }

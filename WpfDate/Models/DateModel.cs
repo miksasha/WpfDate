@@ -8,9 +8,8 @@ namespace WpfDate.Models
     public class DateModel
     {
         private DateTime _birthday = new DateTime(2022, 2, 22);
-        private TimeSpan _age = new TimeSpan();
-           private enum ChinaSystem { Пацюк, Бик, Тигр, Кролик, Дракон, Змія, Кінь, Вівця, Мавпа, Півень, Собака, Свиня };
-
+        private int _age = 0;
+       
         public DateTime Birthday
         {
             get
@@ -25,17 +24,31 @@ namespace WpfDate.Models
             }
         }
 
-        public TimeSpan Age
+        public int Age
         {
             get
             {
                 DateTime today = DateTime.Today;
-                _age = today.Subtract(Birthday);
+                _age = today.Year - _birthday.Year;
+                if (today.Month - _birthday.Month < 0) return --_age;
+                if (today.Month - _birthday.Month == 0) 
+                    if(today.Day - _birthday.Day < 0) return --_age;
                 return _age;
             }
         }
 
-        //WesternSystem { Овен, Телець, Близнюки, Рак, Лев, Діва, Терези, Скорпіон, Стрілець, Козеріг, Водолій, Риби };
+        public bool CorrectDate()
+        {
+            if (_birthday > DateTime.Today) return false;
+            if(_age > 135) return false;
+            return true;
+        }
+
+        public bool BirthdayIsToday()
+        {
+            if (_birthday == DateTime.Today) return true;
+            return false;
+        }
 
         public string WSign()
         {
