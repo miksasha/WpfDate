@@ -36,13 +36,17 @@ namespace WpfDate.ViewModels
             return _date.BirthdayIsToday();
         }
 
-        public int Age
+        public string Age
         {
             get
             {
-                return _date.Age;
+                if (_date.Age < 0)
+                {
+                    return "Людина ще не народилась";
+                }
+                return _date.Age.ToString();
             }
-            set {  _date.Age = value; }
+            set { _= _date.Age; }
         }
         public string WSign
         {
@@ -67,6 +71,9 @@ namespace WpfDate.ViewModels
         {
             if (!_date.CorrectDate())
             {
+                NotifyPropertyChanged("Age");
+                NotifyPropertyChanged("WSign");
+                NotifyPropertyChanged("CSign");
                 MessageBox.Show("Ви ввели не правильну дату народження!");
             }
             else
